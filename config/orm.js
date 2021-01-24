@@ -18,6 +18,7 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+}
 
   const orm = {
     selectAll: function (tableInput, cb) {
@@ -57,9 +58,9 @@ function objToSql(ob) {
 
         cb(result);
       });
-    }
+    },
   }
-}
+
 
 
 
