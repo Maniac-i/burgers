@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   $(".form").on("submit", (event) => {
     event.preventDefault();
 
@@ -15,7 +15,7 @@ $(function() {
     });
   });
 
-  $(".devour").on("click", function(event) {
+  $(".devour").on("click", function (event) {
     console.log($(this));
     var id = $(this).data('id');
     console.log(id);

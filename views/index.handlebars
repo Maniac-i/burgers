@@ -16,7 +16,7 @@
         <ul class="w-75 mx-auto list-group">
           {{#each burgers}}
           {{#unless devoured}}
-          <li class="list-group-item"> {{ id }} {{ burger_name }}
+          <li class="list-group-item"> {{ id }}: {{ burger_name }}
             <button class="devour" data-id="{{this.id}}">Devour!</button>
           </li>
           {{/unless}}
@@ -28,7 +28,7 @@
         <ul class="w-75 mx-auto ist-group">
           {{#each burgers}}
           {{#if devoured}}
-          <li class="list-group-item"> {{ id }} {{ burger_name }}
+          <li class="list-group-item"> {{ id }}: {{ burger_name }}
           </li>
           {{/if}}
           {{/each}}
