@@ -1,40 +1,51 @@
-<h1> EAT THE BURGER!</h1>
-
 <div class="container">
+  <div class="align-content-center">
 
-  <div>
-    <div id="left-column">
-      <ul>
-        {{#each burgers}}
-          {{#unless devoured}}
-           <li> {{ id }} {{ burger_name }} </li>
-          {{/unless}}
-        {{/each}}
-      </ul>
+    <div class="row justify-content-center">
+      <img src="../public/assets/img/kisspng-hamburger-cheeseburger-mcdonald-s-big-mac-veggie-b-burger-5acbad165690d9.1368105815232975583546.png" alt="buger">
+      <h1 class-"col"> EAT THE BURGER!</h1>
     </div>
+    <br>
 
-    <div id="right-column">
-      <ul>
-        {{#each burgers}}
+    <div class="row">
+      <div class="col-sm justify-content-center" id="left-column">
+        <ul class="w-75 mx-auto list-group">
+          {{#each burgers}}
+          {{#unless devoured}}
+          <li class="list-group-item"> {{ id }} {{ burger_name }}
+            <button class="devour" type="submit">Devour!</button>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="col-sm justify-content-center" id="right-column">
+        <ul class="w-75 mx-auto ist-group">
+          {{#each burgers}}
           {{#if devoured}}
-            {{> burgers/burger-block sleep=false}}
+          <li class="list-group-item"> {{ id }} {{ burger_name }} </li>
           {{/if}}
-        {{/each}}
-      </ul>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+      <div class="w-25 justify-content-center">
+      <form class="col">
+        <div class="form-group">
+          <div class="pb-0 mb-0">
+            <label class="pb-0 mb-0"for="exampleFormControlTextarea1">Enter Burger Name:</label>
+          </div>
+          <div>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button class="submit" type="submit">Add Burger</button>
+      </form>
+      </div>
     </div>
   </div>
-
-  <form>
-    <div class="form-group">
-      <div>
-        <label for="exampleFormControlTextarea1">Enter Burger Name</label>
-      </div>
-      <div>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-    </div>
-
-    <button type="submit">Add Burger</button>
-  </form>
-
 </div>
