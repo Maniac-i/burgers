@@ -1,0 +1,40 @@
+<h1> EAT THE BURGER!</h1>
+
+<div class="container">
+
+  <div>
+    <div id="left-column">
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+           <li> {{ id }} {{ burger_name }} </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div id="right-column">
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block sleep=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <div>
+        <label for="exampleFormControlTextarea1">Enter Burger Name</label>
+      </div>
+      <div>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </div>
+
+    <button type="submit">Add Burger</button>
+  </form>
+
+</div>
