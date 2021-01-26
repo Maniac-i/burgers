@@ -1,8 +1,12 @@
 <div class="container">
   <div class="align-content-center">
 
+    <div class='row justify-content-center'>
+      <img
+        src="/assets/img/kisspng-hamburger-cheeseburger-mcdonald-s-big-mac-veggie-b-burger-5acbad165690d9.1368105815232975583546.png"
+        height="500" alt="burger">
+    </div>
     <div class="row justify-content-center">
-      <img src="" alt="burger">
       <h1 class-"col"> EAT THE BURGER!</h1>
     </div>
     <br>
@@ -13,7 +17,7 @@
           {{#each burgers}}
           {{#unless devoured}}
           <li class="list-group-item"> {{ id }} {{ burger_name }}
-            <button class="devour" type="submit">Devour!</button>
+            <button class="devour" data-id="{{this.id}}">Devour!</button>
           </li>
           {{/unless}}
           {{/each}}
@@ -24,7 +28,9 @@
         <ul class="w-75 mx-auto ist-group">
           {{#each burgers}}
           {{#if devoured}}
-          <li class="list-group-item"> {{ id }} {{ burger_name }} </li>
+          <li class="list-group-item"> {{ id }} {{ burger_name }}
+            <button class="delete" data-id="{{id}}">Delete</button>
+          </li>
           {{/if}}
           {{/each}}
         </ul>
@@ -33,18 +39,18 @@
     <br>
     <div class="row justify-content-center">
       <div class="w-25 justify-content-center">
-      <form class="col">
-        <div class="form-group">
-          <div class="pb-0 mb-0">
-            <label class="pb-0 mb-0"for="exampleFormControlTextarea1">Enter Burger Name:</label>
+        <form class="col form">
+          <div class="form-group">
+            <div class="pb-0 mb-0">
+              <label class="pb-0 mb-0" for="exampleFormControlTextarea1">Enter Burger Name:</label>
+            </div>
+            <div>
+              <textarea class="burgerName form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
           </div>
-          <div>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        </div>
 
-        <button class="submit" type="submit">Add Burger</button>
-      </form>
+          <button class="submit" type="submit">Add Burger</button>
+        </form>
       </div>
     </div>
   </div>

@@ -17,19 +17,19 @@ const connection = require("./connection");
 
       console.log(queryString);
 
-      connection.query(queryString, val, (err, result => {
+      connection.query(queryString, val, (err, result) => {
         if (err) {
           throw err;
         }
 
         cb(result);
-      }));
+      });
     },
 
     updateOne: function (val, cb) {
-
+      console.log(val);
       //"UPDATE plans SET plan = ? WHERE burgers.id = ?"
-      let queryString = "UPDATE burgers SET devoured = true WHERE burgers.id = (?)" + condition;
+      let queryString = "UPDATE burgers SET devoured = true WHERE burgers.id = (?)";
 
       connection.query(queryString, val, (err, result) => {
         if (err) {
